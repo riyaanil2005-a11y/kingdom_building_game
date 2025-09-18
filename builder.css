@@ -1,0 +1,152 @@
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  background: #eef2f3;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Sidebar Shop */
+.shop {
+  width: 220px;
+  background: black;
+  border-right: 2px solid #ccc;
+  padding: 15px;
+  color: #ffca28;
+  overflow-y: auto;
+}
+.shop h2 {
+  text-align: center;
+}
+.item {
+  margin: 10px 0;
+  padding: 8px;
+  background: navy;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  transition: transform 0.2s, background 0.2s;
+}
+.item img {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+.item:hover {
+  background: #e6ffe6;
+  transform: scale(1.05);
+  color: black;
+}
+.item.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: rgb(183, 0, 0);
+}
+.item.locked:hover{
+  background-color: #cce8b5;
+}
+
+/* Kingdom Area */
+.kingdom-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: #cce8b5 url('https://i.imgur.com/OYVpe2W.png');
+  background-size: cover;
+  overflow-y: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.topbar {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gold {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Grid — MATCHES rows=7 cols=5 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);   /* cols = 5 */
+  grid-template-rows: repeat(7, 50px);      /* rows = 7 */
+  gap: 0;
+  margin-top: 10px;
+  border: 1px solid #4a7a52;
+  /* center the small grid nicely */
+  width: calc(5 * 50px);
+}
+.cell {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.placed img {
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin: 10px auto;
+  width: 60%;                /* narrower so it's clearly visible with small grid */
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: sticky;
+  top: 50px;
+  z-index: 2;
+}
+.progress-bar {
+  height: 20px;
+  background: #4a7a52;
+  width: 0%;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  transition: width 0.3s;
+}
+.progress-msg {
+  margin-top: 5px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Buttons */
+button {
+  padding: 6px 12px;
+  border: none;
+  background: #ffd54f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #ffca28;
+}
+/* 🔥 Castle unlock highlight */
+.highlight {
+  animation: pulse 1s infinite alternate;
+  border: 2px solid gold !important;
+  background-color: rgba(255, 215, 0, 0.2) !important;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}

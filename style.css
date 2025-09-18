@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f1f24, #2a2a30);
+  color: #eee;
+}
+
+#sidebar {
+  width: 240px;
+  background: #151515;
+  padding: 20px;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.5);
+}
+
+#sidebar h2 {
+  color: #ffd54f;
+  margin-bottom: 15px;
+}
+
+#sidebar p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+#controls {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#controls button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #444;
+  color: #f0f0f0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#controls button:hover {
+  background: #666;
+  transform: scale(1.05);
+}
+
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #ffd54f;
+  text-shadow: 2px 2px 6px #000;
+  margin: 10px;
+}
+
+.subtitle {
+  margin: 5px 0 20px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+#gameBoard {
+  display: grid;
+  gap: 3px;
+  padding: 15px;
+  background: #222;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background: #2f2f2f;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.cell:hover {
+  transform: scale(1.05);
+  background: #3a3a3a;
+}
+
+.cell.revealed {
+  background: #404040;
+  cursor: default;
+}
+
+.cell.safe-zone {
+  background: #4da6ff !important;
+  color: #fff;
+}
+
+.cell.mine {
+  background: #b71c1c;
+  color: white;
+  text-shadow: 0 0 6px #ff4444;
+}
+
+.cell.flag {
+  background: #4e342e;
+  text-shadow: 0 0 6px #ffcc00;
+}
+
+.cell.path {
+  background: #006699;
+  color: #fff;
+}
+
+.cell.treasure {
+  background: #795548;
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+/* Bomb reveal style */
+.bomb-reveal {
+  background-color: #ff4d4d !important;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Highlight restart button */
+.highlight-restart {
+  animation: pulse 1s infinite;
+  border: 2px solid #ffcc00 !important;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Number colors (Minesweeper style) */
+.num1 { color: #1e90ff; }
+.num2 { color: #28a745; }
+.num3 { color: #dc3545; }
+.num4 { color: #800080; }
+.num5 { color: #ff8c00; }
+.num6 { color: #20c997; }
+.num7 { color: #d63384; }
+.num8 { color: #6c757d; }
+
+#statusBar {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 24px;
+}
+.safe-path {
+  background-color: rgba(0, 200, 255, 0.4) !important;
+  border: 2px solid cyan !important;
+}

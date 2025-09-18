@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kingdom Builder</title>
+  <link rel="stylesheet" href="builder.css">
+</head>
+<body>
+  <!-- Sidebar Shop -->
+  <div class="shop">
+    <h2>🏰 Shop</h2>
+    <div class="item" draggable="true" data-cost="50" data-item="house">
+      <img src="assets/house.webp" alt="House"> House <span>50</span>
+    </div>
+    <div class="item" draggable="true" data-cost="70" data-item="mine">
+      <img src="assets/mine.png" alt="Mine"> Mine <span>70</span>
+    </div>
+    <div class="item" draggable="true" data-cost="40" data-item="farm">
+      <img src="assets/farm.webp" alt="Farm"> Farm <span>40</span>
+    </div>
+    <div class="item" draggable="true" data-cost="20" data-item="tree">
+      <img src="assets/tree.png" alt="Tree"> Tree <span>20</span>
+    </div>
+    <div class="item" draggable="true" data-cost="60" data-item="road">
+      <img src="assets/road.webp" alt="Road"> Road <span>60</span>
+    </div>
+    <div class="item" draggable="true" data-cost="80" data-item="tower">
+      <img src="assets/tower.webp" alt="Tower"> Tower <span>80</span>
+    </div>
+    <div class="item" draggable="true" data-cost="150" data-item="market">
+      <img src="assets/market.png" alt="Market"> Market <span>150</span>
+    </div>
+    <!-- reduced castle price to 200 -->
+    <div class="item locked" draggable="false" id="castleItem" data-cost="200" data-item="castle">
+      <img src="assets/castle.png" alt="Castle"> Castle <span>200</span>
+    </div>
+  </div>
+
+  <!-- Main Kingdom Area -->
+  <div class="kingdom-area" id="kingdomArea">
+    <div class="topbar">
+      <div>👑 Kingdom Builder</div>
+      <div class="gold">Gold: <span id="goldDisplay">0</span></div>
+      <button onclick="goBack()">⬅ Back to Game</button>
+    </div>
+
+    <h2>Your Kingdom</h2>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+    <div class="progress-msg" id="progressMsg">Start building your kingdom!</div>
+
+    <div class="grid" id="kingdomGrid"></div>
+  </div>
+
+  <script src="builder.js"></script>
+</body>
+</html>

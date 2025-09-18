@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kingdom Expansion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="sidebar">
+    <h2>🏰 Stats</h2>
+    <p>Gold: <span id="goldCount">0</span></p>
+    <p>Moves: <span id="movesCount">0</span></p>
+    <p>Flags: <span id="flagsCount">0</span></p>
+    <p>Rounds: <span id="roundsCount">0</span></p>
+
+    <div id="controls">
+      <button onclick="resetGame()">🔄 Restart</button>
+      <button onclick="shuffleTreasure()">🎲 Shuffle Treasure</button>
+      <button onclick="highlightSafePath()">🛡️ Find Safe Path</button>
+    </div>
+  </div>
+
+  <div id="main">
+    <h1>👑 Kingdom Expansion</h1>
+    <p class="subtitle">
+      Avoid traps 💥, place flags 🚩, and reach the treasure 💰 to earn gold.
+    </p>
+    <div id="gameBoard"></div>
+    <div id="statusBar">Begin your adventure!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
