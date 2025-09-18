@@ -174,7 +174,7 @@ function resetEverything() {
 
 // --- NAVIGATE BACK ---
 function goBack() {
-  window.location.href = "game.html";
+  window.location.href = "index.html";
 }
 
 // ✅ NEW: show analysis popup at the end
